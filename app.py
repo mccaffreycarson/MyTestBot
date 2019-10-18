@@ -4,7 +4,7 @@ import sys
 import json
 import random
 import requests
-import time
+from datetime import datetime, timedelta
 from flask import Flask, request
 
 #define our flask app
@@ -21,10 +21,9 @@ def msg_received_from_group():
   #Check the text of the message sent to the chat to see if it matches our command word
 
   if data['text'].lower() == "!check":
-    seconds = time.time()
-    send_msg("It is " + str(time.ctime(seconds)) + " and Michigan still sucks!")
-	
-
+    time = datetime.datetime.now() - timedelta(offset=-4)
+    send_msg("It is " + str(time.strftime("%A %b %d")) + "at " + str(time.strftime("%I:%M %p")) + " and Michigan still sucks!")
+    
   return "ok", 200
 
  
