@@ -22,7 +22,7 @@ def msg_received_from_group():
 
   if data['text'].lower() == "!check":
     time = datetime.now() - timedelta(hours=4)
-    send_msg("It is " + str(time.strftime("%A %b %d")) + " at " + str(time.strftime("%I:%M %p")) + " and Michigan still sucks!")
+    send_msg("It is " + str(time.strftime("%A, %b %d, at %I:%M %p")) + " and Michigan still sucks")
     
   return "ok", 200
 
