@@ -21,7 +21,7 @@ def msg_received_from_group():
   #Check the text of the message sent to the chat to see if it matches our command word
 
   if data['text'].lower() == "!check":
-    time = datetime.datetime.now() - timedelta(offset=-4)
+    time = datetime.datetime.now() - timedelta(hours=4)
     send_msg("It is " + str(time.strftime("%A %b %d")) + "at " + str(time.strftime("%I:%M %p")) + " and Michigan still sucks!")
     
   return "ok", 200
